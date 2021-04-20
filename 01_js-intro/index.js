@@ -53,4 +53,22 @@ console.log('postincrement: ', a++); // now  a = 11
 console.log('predecrement: ', --b); // b is 2 right away
 
 
+// b. String ---------------------------------
+var name = 'Myke';
+var lastName = 'Doe';
+var fullname = name + ' ' + lastName;
+console.log(fullname);
+
+// concatenate number and string
+var num = 20;
+var text = 'text';
+console.log(num + text);
+
+
+// c. Boolean
+// true/false
+var isStarted = true;
+// isStarted = false;
+
+
 
