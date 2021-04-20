@@ -48,4 +48,9 @@ console.log('multiplication ', multy);
 console.log('division', divvy);
 console.log('modulus', moddy);
 
+console.log('postincrement: ', a++); // a still = 10
+console.log('postincrement: ', a++); // now  a = 11
+console.log('predecrement: ', --b); // b is 2 right away
+
+
 
