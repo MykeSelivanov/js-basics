@@ -41,3 +41,39 @@ if (temperature > 60 && temperature <= 80) {
 } else {
     console.log('wear whatevet you want');
 }
+
+// steak lovers
+var eatSteak = prompt("Do you want to eat steak?");
+if (eatSteak.toLocaleLowerCase() === 'yes') {
+    document.write('Here\'s a Steak Sandwich');
+} else if (eatSteak.toLocaleLowerCase() === 'no') {
+    document.write('Here\'s a Tofu!');
+} else {
+    document.write('yes or no please!');
+}
+
+// LOOPS
+// a. While loop ------------------------------------
+var age = 20;
+while (age < 23) {
+    age++;
+    console.log(age);
+}
+
+while (age > 18) {
+    age--;
+    console.log(age);
+}
+
+// b. do while
+var val = 10;
+do {
+    // will be executed at least once
+    console.log('This is ' + val);
+} while (val === 11);
+ 
+// c. for loop
+
+for (var i = 0; i < 5; i++) {
+    console.log(i);
+}
