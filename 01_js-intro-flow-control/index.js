@@ -77,3 +77,65 @@ do {
 for (var i = 0; i < 5; i++) {
     console.log(i);
 }
+
+for (var i = 0; i < 5; i++) {
+    if (i === 4) {
+        continue;
+    }
+    console.log(i);
+}
+
+for (var i = 11; i < 44; i+=3) {
+    console.log(i);
+}
+
+for (var i = 1, j = 9; i <= 12; i++) {
+    console.log(j + ' * ' + i + ' = ' + i * j);
+}
+
+// SWITCH STATEMENT ----------------------------------------
+var day2 = 'sunday';
+switch(day2) {
+    case 'monday': {
+        console.log('it\'s moday');
+        break;
+    }
+    case 'saturday': {
+        console.log('it\'s saturday');
+        break;
+    }
+    case 'sunday': {
+        console.log('it\'s sunday');
+        break;
+    }
+    default: {
+        console.log('it\'s either tuesday, or wednesday, or thursday or friday');
+    }
+}
+
+var result;
+const operator = prompt('Enter operator (either +,-,* or /): ');
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
+switch(operator) {
+    case '+': {
+        result = number1 + number2;
+        break;
+    }
+    case '-': {
+        result = number1 - number2;
+        break;
+    }
+    case '*': {
+        result = number1 * number2;
+        break;
+    }
+    case '/': {
+        result = number1 / number2;
+        break;
+    }
+    default:
+        console.log('invalid operator!');
+        break;
+}
+console.log(result);
