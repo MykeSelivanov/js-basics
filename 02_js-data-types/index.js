@@ -137,3 +137,34 @@ delete user.lastName;
 user.interests = ['reading', 'singing', 'rugby'];
 console.log(user.interests);
 
+
+// The Recipe Card
+var recipe = {
+    title: 'Borshch',
+    indredients: ['beetroots', 'pork', 'potato', 'vodka'],
+    servings: 10
+}
+console.log(recipe.title);
+console.log('Serves: ', recipe.servings);
+console.log('Ingredients: '); 
+recipe.indredients.forEach(ingredient => {
+    console.log('\n' + ingredient);
+});
+
+// The Reading List
+var books = [ {
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    alreadyRead: true
+},
+{
+    title: '50 shades of Grey',
+    author: 'Unknow',
+    alreadyRead: false
+}
+];
+books.forEach(book => {
+    if (book.alreadyRead) {
+    console.log(book.title + ' by ' + book.author);
+    }
+})
