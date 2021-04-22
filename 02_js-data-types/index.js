@@ -67,6 +67,73 @@ console.log(bands);
 
 
 // OBJECTS ----------------------------------------------
-var person = {};
 // var person = new Object();
+// key-pair
+var person = {};
+person.name = 'Mike';
+person.occupation = 'professional';
+console.log(person);
+
+// var person = { values };
+var person2 = {
+    name: 'Ulan',
+    gender: 'male',
+    occupation: 'instructor'
+};
+console.log(person2);
+
+var arrayOfObject = ['Text', 123, true, person];
+console.log(arrayOfObject);
+
+// Bracket notations - objects
+console.log(person['name']);
+console.log(person['occupation']);
+
+// Dot Notation - objects
+console.log(person2.name);
+console.log(person2.gender);
+console.log(person2.occupation);
+
+// add to object
+person.weight = 89;
+console.log(person);
+
+// update object props
+person.name = 'Rick';
+console.log(person);
+
+// delete object props
+delete person.occupation;
+console.log(person);
+
+// arrayOfObject
+var gandalf = {
+    name: 'RRRRR',
+    gender: 'male',
+    age: 11000
+}
+
+var arrayOfObject2 = ['Text', 123, true, gandalf];
+// index
+console.log(arrayOfObject2[3].name);
+
+// pop
+console.log(arrayOfObject2.pop().name);
+arrayOfObject2.push(gandalf);
+
+// loop
+for (var i = 0; i < arrayOfObject2.length; i++) {
+    if (arrayOfObject2[i] === gandalf) {
+        console.log(arrayOfObject2[i].gender);
+    }
+}
+
+// activity
+var user = {};
+user.name = 'John';
+user.lastName = 'Doe';
+user.name = 'Chris';
+delete user.lastName;
+user.interests = ['reading', 'singing', 'rugby'];
+console.log(user.interests);
 
