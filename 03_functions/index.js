@@ -58,6 +58,7 @@ countNumbers(1,2); // a = 1, b = 2, sum = 3
 countNumbers(1,2,3,4,5); // a 
 
 // Activity
+// 1.
 function sumOfFour(num1, num2, num3, num4) {
     console.log(num1 + num2 + num3 + num4);
 }
@@ -67,5 +68,75 @@ function myName(firstName, middlename, lastName) {
     return firstName + ' ' + middlename + ' ' + lastName;
 }
 console.log(myName('Mary', 'Elizabeth', 'Smith'));
+
+// 2.
+function multiplyFourNums(num1, num2, num3, num4) {
+    return num1 * num2 * num3 * num4;
+}
+console.log(multiplyFourNums(1,2,3,4));
+
+// 3. 
+function alertUserFullName(name, lastName) {
+    return 'Hello ' + name + ' ' + lastName;
+}
+alert(alertUserFullName('Mike', 'Smith'));
+
+// dec(); - works
+dec();
+function dec () {
+    console.log('thisi is dec function');
+}
+
+// exp(); - error
+var exp = function () {
+    console.log('this is exp function');
+}
+
+// SCOPES ------------------------------------------------------
+// 1. Global
+// 2. Local
+
+var theString = 'The current year is ';
+var year = 2021;
+
+function currentYear() {
+    // function scope
+    console.log(theString + year); // can access global vars
+} 
+currentYear();
+
+if (10 > 1) {
+    // block scope
+    console.log(year);
+}
+
+// 2. Local
+function lastYearFun() {
+    var str = 'The Last year is '; // local variable
+    var lastYear = 2020;
+    console.log(str + lastYear);
+}
+lastYearFun();
+
+// console.log(str); // Reference error - str is not defined
+
+// Activity
+// 1.
+function percentageOfWorld1(population){
+    return population / 7900 * 100;
+}
+var china = percentageOfWorld1(1441);
+var usa = percentageOfWorld1(350);
+var russia = percentageOfWorld1(170);
+console.log(Math.round(china) + '% - china, ' + Math.round(usa) +  '% - usa, ' + Math.round(russia) + '% - russia');
+
+var percentageOfWorld2 = function (population){
+    return population / 7900 * 100;
+}
+var mexico = 70;
+var grenland = 0.1;
+var croatia = 10;
+console.log(percentageOfWorld2(mexico) + '% - mexico, ' + percentageOfWorld2(grenland) +  '% - grenaland, ' + percentageOfWorld2(croatia) + '% - croatia');
+
 
 
