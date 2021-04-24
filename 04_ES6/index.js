@@ -189,3 +189,52 @@ console.log(...books);
 
 const arr1 = [1,2,3];
 const arr2 = ['a','b','c'];
+console.log(arr1.concat(arr2));
+console.log(...arr1,...arr2);
+
+// Activity
+// 1.
+const initialColors = ["white", "black", "gray"];
+const exoticColor = ["purple", "orange", "green"];
+const mixedArr = [...initialColors, ...exoticColor];
+
+// 2.
+function join(initialColors, exoticColor){
+    return [...initialColors, ...exoticColor];
+}
+
+// 3. Rest
+const average = (...unlimitedArgs) => {
+    if (unlimitedArgs.length === 0) return 0;
+    let sum = 0;
+    for (let el of unlimitedArgs) {
+        sum += el;
+    }
+    return sum / unlimitedArgs.length;
+}
+console.log(average(2,2));
+console.log(average(1,2,3,4,5,6,7,8,9,10));
+
+
+// Promises
+// creating a promise
+const promise = new Promise((resolve, reject) => {
+    let sum = 1 + 2;
+
+    if(sum === 3) {
+         // if successful resolve
+        resolve('Yes it is true');
+    } else {
+        // if fails reject
+        reject('Sorry it\'s wrong');
+    }
+});
+
+promise.then((data) => {
+    console.log(data);
+})
+.catch(err => console.log(err)
+);
+
+
+
