@@ -138,5 +138,45 @@ var grenland = 0.1;
 var croatia = 10;
 console.log(percentageOfWorld2(mexico) + '% - mexico, ' + percentageOfWorld2(grenland) +  '% - grenaland, ' + percentageOfWorld2(croatia) + '% - croatia');
 
+// IEFI - immediately invoked fucntions
+(function(a) {
+    console.log('arg', a);
+    console.log('IEFI');
+})('hey');
 
+// fucntions as object properties
+var car = {
+    color: 'black',
+    type: 'sedan',
+    drive: function(dir) {
+        console.log('car is moving', dir);
+    }
+    }
+car.drive('right');
+
+// functions as arguments - callback
+function callMe(callback) {
+    callback();
+}
+callMe(function () {
+    console.log('Call me');
+});
+
+// The Frotune Teller
+function tellFortune(numOfChild, partnerName, location, jobTitle){
+    console.log('You will be a ' + jobTitle + ' in ' + location + ' ,and married to ' + partnerName + ' with ' + numOfChild + ' kids');
+}
+tellFortune(4, 'Toma', 'Hawaii', 'surfer');
+
+// The Puppy Age Calculator
+function calculateDogAge(dogAge, convertionRate) {
+    console.log('Your dog age is: ' + dogAge * convertionRate);
+}
+calculateDogAge(5,7);
+
+// The Lifetime Supply Calculator
+function calculateSupply(age, amountPerDay) {
+    const maxAge = 100;
+    console.log('You will need ' + (maxAge - age) * amountPerDay + ' to last you until the ripe old age of ' + maxAge);
+}
 
