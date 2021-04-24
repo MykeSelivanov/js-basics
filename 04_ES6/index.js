@@ -151,5 +151,41 @@ function xyz(a, b = ['John']) {
 }
 xyz(1);
 
+// Rest Operators
+const sum = (...myargs) => {
+    // Rest operator collects the values and store them in array
+    console.log(myargs);
+}
+
+sum(1); // [1]
+sum(1,2); // [1,2]
+sum(1,2,3); // [1,2,3]
+
+function mulitiply(multiplier, ...theArgs) {
+    // code
+    console.log('mulitplier', multiplier);
+    console.log('rest of arguments', theArgs);
+    let result = [];
+    for (let i = 0; i < theArgs.length; i++) {
+       result.push(theArgs[i] * multiplier);
+    }
+    return result;
+}
+let arr = mulitiply(2,15,25,42);
+console.log(arr);
 
 
+// Spread Operator
+// [] -> elements
+
+const books = [
+    'Don Quixote',
+    'The Hobbit',
+    'Alice in Wonderland',
+    'Tale of Two Cities'
+];
+
+console.log(...books);
+
+const arr1 = [1,2,3];
+const arr2 = ['a','b','c'];
