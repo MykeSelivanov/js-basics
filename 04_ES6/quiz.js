@@ -30,3 +30,31 @@ console.log(onePlusOne());
 var xyz = `foo ${y}`, y = `bar ${xyz}`;
 console.log(xyz); // foo undefined
 console.log(y); // bar foo undefined
+
+// 6. 
+// let options = {
+//     protocol,
+//     url,
+//     method,
+//     callback
+// };
+
+// 7.
+let arr3 = [12,4,17];
+console.log(Math.max(...arr3));
+
+// 8.
+const promise1 = new Promise(function(resolve, reject) {
+    // do stuff
+});
+
+// 9. 
+const obj123 = { foo: 1};
+obj123.bar = 2; // it will work, even though it is a constant, you can still modify
+// properties, since it's an object
+console.log(obj123);
+
+// 10. IIFE - immediately invoked function expression
+(function qwerty() {
+    console.log('hey');
+})();
