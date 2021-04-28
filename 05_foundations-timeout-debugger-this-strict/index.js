@@ -50,7 +50,7 @@ const intervalId = setInterval(() => {
 }, 1000);
 
 
-// this
+// THIS ----------
 // global scope
 console.log(this); // when you use this in a global context it becomes window
 
@@ -94,6 +94,7 @@ const user3 = {
 hi.call(user3); // Hello my name is Peter
 
 // ex 2
+// CALL function
 function greetings(language1, language2, language3) {
     console.log(`Hello, my name is ${this.name} and I know ${language1}, ${language2}, ${language3}`);
 }
@@ -107,3 +108,28 @@ const languages = ['Java', 'JS', 'HTML'];
 greetings.call(user4, languages[0], languages[1], languages[2]); // Hello, my name is Mike and I know Java, JS, HTML
  
 
+// APPLY ---------
+greetings.apply(user4, languages); // same as call, except how we pass arguments
+
+// BIND ---------
+const newFunc = greetings.bind(user4, ...languages); // same as call but only returns new function
+newFunc();
+
+// LEXICAL BINDING -------
+const friend = {
+    name: 'Jack',
+    greet: () => {
+        console.log(this.name);
+    }
+}
+friend.greet(); // undefined, since arrow function cannot bind to object's this
+
+
+// STRICT -------
+
+window.age = 25;
+function sayAge() {
+    'use strict';  // will acitvate strict mode in JS, which will not allow to use parameters with same name, wiil block hoisting, will not allow to assign a value to global window
+    console.log(`My age is ${this.age}`);
+}
+sayAge(); // TypeError: Cannot read property 'age' of undefined
