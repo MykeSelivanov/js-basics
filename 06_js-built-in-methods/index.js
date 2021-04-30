@@ -210,8 +210,60 @@ console.log(numsES6);
 
 // MORE ADVANCED
 // forEach()
-const 
+fruits.forEach(fruit => console.log(fruit));
 
+// reverse() - reverses array
+console.log(fruits3.reverse());
+
+// some() - checks if at least one condition is true
+const numsArray = [6, 3, 14, 4, 12, 87];
+const isDivByTwo = numsArray.some( num => num % 2 === 0);
+console.log(isDivByTwo);
+
+// sort()
+// depends on data type and is more complex
+console.log(fruits.sort());
+console.log(numsArray.sort((a,b) => a - b));
+
+// map(); - apply an operation
+const arr123 = [1, 4, 9, 16];
+const arr123Doubled = arr123.map((num) => num * 2);
+console.log(arr123Doubled);
+
+// filter() - filtering data
+const words2 = [
+    'sparrow',
+    'water',
+    'elite',
+    'destruction',
+    'present',
+    'badword'
+];
+const longerWrods = words2.filter((word) => word.length > 6);
+console.log(longerWrods);
+
+const noBadWords = words2.filter((word) => word !== 'badword');
+console.log(noBadWords);
+
+// reduce()
+const prices = [1.95, 3, 50.095, 17, 54];
+
+const sum = prices.reduce((accumulator, currentValue) => {
+    return accumulator += currentValue;
+},0 );
+console.log(sum);
+
+// Ex 2
+let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice', 'Bob'];
+let countedNames = names.reduce(function(allNames, name) {
+    if (name in allNames) {
+        allNames[name]++;
+    } else {
+        allNames[name] = 1;
+    }
+    return allNames;
+}, {});
+console.log(countedNames); // {Alice: 2, Bob: 2, Tiff: 1, Bruce: 1}
 
 
 
