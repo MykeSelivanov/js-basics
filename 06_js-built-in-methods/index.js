@@ -71,6 +71,92 @@ foo = foo.toString();
 bar = bar.toFixed(1);
 console.log(`c1 - ${c1}, foo - ${foo}, bar - ${bar} `);
 
+/**
+ * String methods
+ */
+
+ // length
+ const txt = 'ABCDEFGHIJKLMOPQRSTUVWXYZ';
+ const msg = 'A msg';
+ console.log(txt.length);
+ console.log(msg.length);
+
+ // indexOf()
+ const sentence1 = "Please locate where 'locate' occurs!";
+ const pos1 = sentence1.indexOf('locate');
+ console.log(pos1);
+ console.log(sentence1.indexOf('e')); // 2
+ console.log(sentence1.indexOf('p')); // -1
+
+ // lastIndexOf()
+ const sentence2 = "Please locate where 'locate' occurs!";
+ const pos2 = sentence2.lastIndexOf('locate');
+ console.log(pos2); // 21
+ console.log(sentence2.lastIndexOf('e')); // 26
+
+// search() - similar to indexOf()
+// but we can provide regex to it
+const sentence3 = "Please locate where 'locate' occurs!";
+const pos3 = sentence3.search('locate');
+console.log(pos3);
+
+// replace()
+const microsoft = 'Please visit Microsoft';
+const copyOfMic = microsoft.replace('Microsoft', 'Google');
+console.log(microsoft);
+console.log(copyOfMic);
+
+// toUpperCase() and toLowerCase()
+let hello = 'Hello World';
+const toLower = hello.toLocaleLowerCase();
+const toUpper = hello.toUpperCase();
+console.log('toLower - ', toLower);
+console.log('toUpper - ', toUpper);
+
+// concat()
+const he = 'Hello';
+const lo = 'World';
+console.log(he.concat(' ',lo));
+
+// charAt()
+const ctext = "HELLO WORLD";
+console.log(ctext.charAt(0)); // it is more advised to use charAt() instead of method below
+console.log(ctext[0]);
+
+// split()
+const txt2 = 'hey | b | c d good bye';
+console.log(txt2.split(' '));
+console.log(txt2.split('|'));
+console.log(txt2.split(','));
+
+// endWith() and startsWith()
+const final = 'I start with I and end with i';
+console.log(final.startsWith('I')); // true
+console.log(final.endsWith('i')); // true
+console.log(final.endsWith('s')); // false
+
+// Extracting a part of a string
+// 1. slice()
+const str1 = 'apple, banana, kiwi';
+const banana = str1.slice(str1.indexOf('banana'), str1.lastIndexOf('a') + 1);
+console.log(banana);
+
+// 2. substring()
+const banana2 = str1.substring(7,13);
+console.log(banana2);
+
+// substr() - first argument is the starting index and the second argument is the desired legth of string
+const banana3 = str1.substr(7,6); // start from 7, cut 6 characters after
+console.log(banana3);
+
+// Activity
+let sentence4 = 'Hey this is skyzone js basics';
+const idxOfSkyzone = sentence4.indexOf('skyzone');
+sentence4 = sentence4.replace('skyzone','SkyZone');
+sentence4 += ' almost the end';
+sentence4 = sentence4.slice(0, sentence4.indexOf(' end'));
+const words = sentence4.split(' ');
+
 
 
 
