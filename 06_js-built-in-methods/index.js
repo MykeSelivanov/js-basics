@@ -157,6 +157,61 @@ sentence4 += ' almost the end';
 sentence4 = sentence4.slice(0, sentence4.indexOf(' end'));
 const words = sentence4.split(' ');
 
+// ARRAY METHODS
+// isArray()
+const cities = ['NY', 'LA'];
+console.log(Array.isArray(cities)); // true
+
+// length
+console.log(cities.length);
+
+// toString()
+console.log(cities.toString());
+
+// join() - opposite to split(), provided parameter will become a separator between array members
+console.log(cities.join('/'));
+
+// pop()
+let fruits = ['Banaa', 'Strawberry', 'Orange', 'Mango'];
+const mango = fruits.pop(); // removes the last element and return the removed value
+console.log('fruits: ', fruits);
+console.log('mango: ', mango);
+
+// push()
+fruits.push('Kiwi'); // returns the length of the new array
+console.log(fruits);
+
+// shift() - opposite to pop - removes the element at the begingign of the array
+const fruits2 = ['Banaa', 'Strawberry', 'Orange', 'Mango'];
+fruits2.shift();
+console.log(fruits2);
+
+// unshift() - opposite to push - pushes the element to the beginging of the array
+const fruits3 = ['Banaa', 'Strawberry', 'Orange', 'Mango'];
+fruits3.unshift('Lemon');
+console.log(fruits3);
+
+// splice() - first - index, second - how many to be removed, element to be inserted
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1,2,'Feb');
+console.log(months);
+
+// concat() - concatenates arrays together
+const arr1 = ['One', 'Two', 'Three'];
+const arr2 = ['Four', 'Five', 'Six'];
+const arr3 = ['Seven', 'Eight', 'Nine'];
+const nums = arr1.concat(arr2, arr3);
+const numsES6 = [...arr1, ...arr2, ...arr3];
+console.log(nums);
+console.log(numsES6);
+
+// indexOf & lastIndexOf - similar to string methods
+
+
+// MORE ADVANCED
+// forEach()
+const 
+
 
 
 
