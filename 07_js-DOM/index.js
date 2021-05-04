@@ -79,4 +79,72 @@ appleEl.setAttribute('alt','4 apples');
 console.log('source', appleEl.getAttribute('src'));
 console.log('alt', appleEl.getAttribute('alt'));
 
+// Styling of DOM elements
+const theBody = document.getElementsByTagName('body')[0];
+theBody.style.backgroundColor = 'lightgray';
+
+appleEl.style.width = '200px';
+appleEl.style.height = 'auto';
+appleEl.style.border = '2px solid grey';
+
+// className vs classList
+console.log(appleEl.className);
+console.log(appleEl.classList);
+
+appleEl.classList.add('red');
+console.log(appleEl.className);
+console.log(appleEl.classList);
+console.log(appleEl.classList[0]);
+console.log(appleEl.classList[1]);
+
+appleEl.classList.remove('red');
+console.log(appleEl.className);
+console.log(appleEl.classList);
+
+console.log(appleEl.classList.contains('red')); // false
+appleEl.classList.add('red');
+appleEl.classList.replace('red', 'green'); 
+console.log(appleEl.classList.contains('green')); // true
+
+appleEl.classList.toggle('green'); // removed
+console.log(appleEl.className);
+console.log(appleEl.classList);
+
+appleEl.classList.toggle('green'); // brought back
+console.log(appleEl.className);
+console.log(appleEl.classList);
+
+// innerHTML
+const greetingBox = document.querySelector('.greeting');
+greetingBox.innerHTML = '<h1>Hello World</h1>';
+greetingBox.innerHTML += '<p>This is hello world</p>';
+
+// textContent
+const greetingBox2 = document.querySelector('.greeting2');
+greetingBox2.textContent = 'Hello Text Content';
+
+// innerText
+greetingBox2.innerText = 'Hellot Inner Text';
+
+/**
+ * Creating a new Node
+ */
+const footer = document.querySelector('footer');
+const copyright = document.createElement('p');
+const text2 = document.createTextNode('Do not copy!');
+copyright.appendChild(text2);
+// or
+copyright.textContent = 'Serioulsy, do not copy!';
+footer.appendChild(copyright);
+
+const address = document.createElement('p');
+address.textContent = 'Mars';
+footer.append(address);
+
+// Activity
+const theBody2 = document.getElementsByTagName('body')[0];
+const div123 = document.createElement('div');
+const newH1 = document.createElement('h1');
+newH1.textContent = 'hey this is H1';
+theBody2.appendChild(div123.appendChild(newH1));
 
