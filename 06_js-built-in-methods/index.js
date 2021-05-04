@@ -265,5 +265,95 @@ let countedNames = names.reduce(function(allNames, name) {
 }, {});
 console.log(countedNames); // {Alice: 2, Bob: 2, Tiff: 1, Bruce: 1}
 
+/**
+ * Object methods
+ */
 
+ // Object.create();
 
+ const myCar = {
+     model: "chevy",
+     type: "sport",
+     isAvailable: "true",
+     showDetails(){
+         console.log(`My car model is ${this.model}, and type is ${this.type}`)
+     }
+ };
+ myCar.showDetails();
+
+ const yourCar = Object.create(myCar);
+ console.log('yourCar', yourCar);
+ console.log('yourCar model', yourCar.model);
+ console.log('yourCar type', yourCar.type);
+
+ yourCar.model = 'some nicer model';
+ console.log('your Car', yourCar);
+ yourCar.showDetails();
+
+ // hasOwnProperty()
+ console.log(yourCar.hasOwnProperty('model')); // true
+ console.log(yourCar.hasOwnProperty('type')); // false
+ console.log(yourCar.hasOwnProperty('isAvailable')); // false
+
+// Object.keys();
+// will return an array
+
+const employees = {
+    boss: 'Mike',
+    secretary: 'Pam',
+    sales: 'Jim',
+    engineer: 'Me'
+}
+const employeeKeys = Object.keys(employees);
+console.log('employeeKeys', employeeKeys);
+
+for (let key of Object.keys(employees)) {
+    console.log(key);
+}
+
+// Object.values()
+// will return an array
+const employeeValues = Object.values(employees);
+console.log('employeeValues', employeeValues);
+
+// Object.entries()
+const employeeEntries = Object.entries(employees);
+console.log(employeeEntries);
+
+for (let [key, value] of Object.entries(employees)) {
+    console.log(`key: ${key}, value: ${value}`);
+}
+for (let entries of Object.entries(employees)) {
+    console.log(`key: ${entries[0]}, value: ${entries[1]}`);
+}
+
+// Object.assign()
+const name99 = {
+    firstName: 'Mike',
+    lastName: 'Smith'
+};
+
+const details = {
+    job: 'engineer',
+    employeer: 'freelance'
+}
+const name88 = Object.assign({},name99);
+console.log(name88);
+const name77 = Object.assign({hobby: 'running'},name99);
+console.log(name77);
+const name66 = Object.assign(details, name99);
+console.log(name66);
+
+// Object.freeze()
+const user = {
+    username: 'AzureDiamond',
+    passsword: 'hunter2'
+}
+Object.freeze(user);
+user.passsword = 'another password';
+user.active = true;
+console.log(user);
+
+// Object.isFrozen()
+console.log(Object.isFrozen(user)); // true
+console.log(Object.isFrozen(details)); // false
