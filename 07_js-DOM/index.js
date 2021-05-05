@@ -91,16 +91,19 @@ appleEl.style.border = '2px solid grey';
 console.log(appleEl.className);
 console.log(appleEl.classList);
 
+// add()
 appleEl.classList.add('red');
 console.log(appleEl.className);
 console.log(appleEl.classList);
 console.log(appleEl.classList[0]);
 console.log(appleEl.classList[1]);
 
+// remove()
 appleEl.classList.remove('red');
 console.log(appleEl.className);
 console.log(appleEl.classList);
 
+// contains()
 console.log(appleEl.classList.contains('red')); // false
 appleEl.classList.add('red');
 appleEl.classList.replace('red', 'green'); 
@@ -148,3 +151,45 @@ const newH1 = document.createElement('h1');
 newH1.textContent = 'hey this is H1';
 theBody2.appendChild(div123.appendChild(newH1));
 
+
+/** 
+ * Events
+ */
+// addEventListener(), removeEventListener()
+const btnPrimary = document.getElementById('btn-primary');
+const btnSecondary = document.getElementById('btn-secondary');
+
+// takes an event type and callback function
+// addEventListener('click', handleClick);
+
+const handleClick = () => {
+    console.log('button is activated');
+};
+
+btnPrimary.addEventListener('click', handleClick);
+btnSecondary.addEventListener('click', () => {
+    btnPrimary.removeEventListener('click', handleClick);
+});
+
+// preventDefault()
+const googleButton = document.getElementById('google');
+googleButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    alert('Google is not available rigt now!')
+    console.log(event.target);
+});
+
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+
+console.log('username', username);
+console.log('email', email);
+
+// change event type
+username.addEventListener('change', (event) => {
+    console.log(event.target.value);
+});
+// input event type
+username.addEventListener('input', (event) => {
+    console.log(event.target.value);
+});
