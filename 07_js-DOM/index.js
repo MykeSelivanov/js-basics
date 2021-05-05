@@ -190,6 +190,18 @@ username.addEventListener('change', (event) => {
     console.log(event.target.value);
 });
 // input event type
-username.addEventListener('input', (event) => {
+email.addEventListener('input', (event) => {
     console.log(event.target.value);
+});
+
+// Activity
+const btnChameleon = document.getElementById('btn-chameleon');
+btnChameleon.style.color = '#fff';
+btnChameleon.style.background = 'blue';
+
+btnChameleon.addEventListener('mouseover', () => {
+    btnChameleon.style.background = 'green';
+})
+btnChameleon.addEventListener('mouseout', () => {
+    btnChameleon.style.background = 'red';
 });
