@@ -22,3 +22,4 @@ const clearName = () => {
 // event handlers
 submitBtn.addEventListener('click', handleClick);
 clearBtn.addEventListener('click', clearName);
+

@@ -45,3 +45,4 @@ localStorage.getItem('person'); // [object Object]
 // This problem can be solved by using the native JSON.stringify() and JSON.parse() methods:
 localStorage.setItem('person', JSON.stringify(person));
 JSON.parse(localStorage.getItem('person'));
+
