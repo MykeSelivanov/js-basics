@@ -48,10 +48,67 @@ console.log(cat1.__proto__ === cat.prototype);
  */
 
 class User {
-
+    constructor(name, age){
+        // all these are public properties
+        this.name = name;
+        this.age = age;
+    }
+    getDetails() {
+        console.log(`My name is ${this.name} and i am ${this.age} old`);
+    }
 }
 
-let admin = new User(); // admin object
+let admin = new User('Josh', 30); // admin object
 let user = new User(); // user object
 
+console.log(admin);
 
+// statis properties of methods
+Array.from('foo'); // ['f', 'o', 'o'];
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    // regular function
+    getInfo() {
+        console.log(this);
+        console.log(`My name is ${this.name}`);
+    }
+    // static function
+    static getStaticInfo() {
+        console.log(this);
+        console.log(`My name is ${this.name}`);
+    }
+}
+
+const bektur = new Person('Bektur');
+console.log(bektur);
+bektur.getInfo();
+// static
+// bektur.getStaticInfo(); // fails
+Person.getStaticInfo();
+
+Person.id = 1; // creates a static id on a Person class
+console.log(Person.id); // 1
+console.log(bektur.id); // undefined
+
+console.dir(Person);
+
+// Activity
+class Car {
+    static engine = false;
+    constructor(color) {
+        this.color = color;
+    }
+    checkColor() {
+        console.log(`This car is ${this.color} color`);
+    }
+    static engineStart() {
+        this.engine = true;
+        console.log(`Engine idling = ${this.engine}`);
+    }
+}
+const toyota = new Car('white');
+toyota.checkColor();
+Car.engineStart();
