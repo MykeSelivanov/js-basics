@@ -112,3 +112,45 @@ class Car {
 const toyota = new Car('white');
 toyota.checkColor();
 Car.engineStart();
+
+// Subclassing
+// parent class
+class PersonClass {
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    introduce() {
+        console.log(`My name is ${this.firstName} and I am ${this.age} old`);
+    }
+}
+
+// child class
+class Customer extends PersonClass {
+    constructor(firstName, lastName, age, isPrimeMember) {
+        super(firstName, lastName, age);
+        this.isPrimeMember = isPrimeMember;
+    }
+}
+
+const millionaireCustomer = new Customer('Max', 'Payne', 75, true);
+console.log(`millionareCustomer `, millionaireCustomer);
+millionaireCustomer.introduce();
+
+// child class
+class Employee extends PersonClass {
+    constructor(firstName, isFullTime, color) {
+        super(firstName);
+        this.isFullTime = isFullTime;
+        this.color = color;
+    }
+    // overriding parent methods
+    introduce() {
+        console.log(`My name is ${this.name} and my favorite color is ${this.color}`);
+    }
+}
+
+const fulltimeEmployee = new Employee('Meerim', true, 'red');
+console.log(`Meerim`, fulltimeEmployee);
+fulltimeEmployee.introduce();
