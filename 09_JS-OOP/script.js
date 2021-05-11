@@ -147,10 +147,38 @@ class Employee extends PersonClass {
     }
     // overriding parent methods
     introduce() {
-        console.log(`My name is ${this.name} and my favorite color is ${this.color}`);
+        console.log(`My name is ${this.firstName} and my favorite color is ${this.color}`);
     }
 }
 
 const fulltimeEmployee = new Employee('Meerim', true, 'red');
 console.log(`Meerim`, fulltimeEmployee);
 fulltimeEmployee.introduce();
+
+// Activity
+class Animal {
+    constructor(animalName, color, voice){
+        this.animalName = animalName;
+        this.color = color;
+        this.voice = voice;
+    }
+    run() {
+        console.log(`This ${this.animalName} is running`);
+    }
+}
+
+class Dog extends Animal {
+    constructor(animalName, color, voice){
+        super(animalName, color, voice);
+    }
+}
+
+class Labrador extends Dog {
+    constructor(animalName, color, voice){
+        super(animalName, color, voice);
+    }
+}
+
+const labrador = new Labrador('Jack', 'golden', 'bark');
+console.log(labrador);
+labrador.run();
