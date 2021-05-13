@@ -42,6 +42,44 @@ setTimeout(() => {
     }, 1000);
 }, 1000);
 
+// Error handling in callbacks
+// mimic async code
+function downloadImage(url, success, failure) {
+    const error = true;
+    setTimeout(() => {
+      if (!error) {
+        console.log(`Downloading ${url} ...`);
+        // process the picture once it is completed
+        success(url);
+      } else {
+        failure('Error occured while downloading!');
+      }
+    }, 2000);
+  }
+  const url1 = 'https://www.someurl.net/1.jpg';
+  const url2 = 'https://www.someurl.net/2.jpg';
+  const url3 = 'https://www.someurl.net/3.jpg';
+  
+  downloadImage(
+    url1,
+    function () {
+      console.log(`Processing ${url1}`);
+      downloadImage(
+        url2,
+        function () {
+          console.log(`Processing ${url2}`);
+          // third url3
+          // callback hell here
+        },
+        function (err) {
+          console.log(`err in ${url2}`);
+        }
+      );
+    },
+    function (err) {
+      console.log(`err in ${url1}`);
+    }
+  );
 
 
 
