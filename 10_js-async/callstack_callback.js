@@ -16,7 +16,7 @@ function displayResult(num) {
 displayResult(5);
 
 
-// 
+// order of async running
 console.log('Plant maize'); // 1 
 
 setTimeout(function() {
@@ -59,7 +59,7 @@ function downloadImage(url, success, failure) {
   const url1 = 'https://www.someurl.net/1.jpg';
   const url2 = 'https://www.someurl.net/2.jpg';
   const url3 = 'https://www.someurl.net/3.jpg';
-  
+
   downloadImage(
     url1,
     function () {
@@ -80,6 +80,16 @@ function downloadImage(url, success, failure) {
       console.log(`err in ${url1}`);
     }
   );
+
+// Activity
+document.getElementById('btn').addEventListener('click', () => {
+    setTimeout(() => {
+        for (let idx = 0; idx < 10; idx++) {
+            console.log('Myke');
+        }
+    }, 5000);
+});
+
 
 
 
